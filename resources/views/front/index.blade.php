@@ -33,12 +33,12 @@
 	</div>
 	<div id="body">
 		<div id="tagline" >
-			<h1>engineer</h1>
+			<h1>hi</h1>
 			<p>
-			Shatha Ahmed Al-Mansy
+			in my profile
 			</p>
 		</div>
-		<img src="images/homeng.jpg" alt="Avatar" class="log">
+		<img src="images/eng.jpg" alt="Avatar" class="log">
 		<!-- <img src="images/homeng.jpg" alt="lady doing yoga" class="figure"> -->
 	</div>
 	<div id="footer">
