@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +23,8 @@ Route::get('/',[HomeController::class,'index']);
 // Route::get('/pages/{name}',[HomeController::class,'show']);
 Route::view('/about',[HomeController::class,'front.pages.about']);
 Route::view('/contact',[HomeController::class,'front.pages.contact']);
-Route::view('/dashboard','layouts.dashboard');
+// Route::view('/dashboard','layouts.dashboard');
+Route::get('/dashboard/categories',[CategoriesController::class , 'index'])
+->name('dashboard.categories.index');
+
 

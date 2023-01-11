@@ -164,7 +164,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="{{ asset ('dashboard-assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Al-Mansy | dashboard</span>
             </a>
 
             <!-- Sidebar -->
@@ -175,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{ asset ('dashboard-assets/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">my business</a>
                     </div>
                 </div>
 
@@ -284,7 +284,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; {{ now()->year }}<a href="https://adminlte.io">Shatha | Al-Mansy</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->
