@@ -24,7 +24,8 @@
 					Design version 3. Code version 1. Website Template details, discussion and updates for this <a href="https://freewebsitetemplates.com/discuss/rehabilitation-yoga/">Belle &amp; Carrie Rehabilitation Yoga Web Template</a>. Website Template design by <a href="https://freewebsitetemplates.com/">Free Website Templates</a>. Please feel free to remove some or all the text and links of this page and replace it with your own About content.
 				</p>
 			</div>
-			<img src="images/lady-in-yoga.jpg" alt="lady doing yoga" class="figure">
+			<!-- <img src="images/lady-in-yoga.jpg" alt="lady doing yoga" class="figure"> -->
+			<img src="images/eng.jpg" alt="Avatar" class="log">
 		</div>
 		
 		

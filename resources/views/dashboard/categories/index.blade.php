@@ -20,7 +20,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
+            <th></th>
             <th>NAME</th>
             <th>PARENT ID</th>
             <th>CREATED AT</th>
@@ -32,7 +32,7 @@
     <tbody>
         @foreach($categories as $category)
         <tr>
-            <td>{{ $category->id }}</td>
+            <td> <img class="img-fluid" src="{{ $category->image_url }}" width="80" alt=""></td>
             <td><strong>{{ $category->name }}</strong><br>
 					<span class="text-muted">{{ $category->slug }}</span></td>
             <td>{{ $category->parent_name }}</td>

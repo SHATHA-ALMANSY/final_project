@@ -33,9 +33,9 @@ class CategoryRequest extends FormRequest
             'image' => [
                 'nullable',
                 'image',
-                'max:200' ,
+                'max:400' ,
                 // 'dimensions:min_width=300,min_height=300,max_width=800,max_height=300' ,
-                Rule::dimensions()->minWidth(300)->minHeight(300)->maxWidth(800)->maxHeight(300) ,
+                Rule::dimensions()->minWidth(300)->minHeight(300)->maxWidth(1400)->maxHeight(1400) ,
             ]
 
 

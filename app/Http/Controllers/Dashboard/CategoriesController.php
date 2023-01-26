@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 
@@ -51,6 +52,11 @@ class CategoriesController extends Controller
 
             if(!$data['slug']){
                 $data['slug'] = Str::slug($data['name']);
+            }
+            if($request->hasFile('image')){
+              $file = $request->file('image'); // لانو اللارافيل عملالنا كلاس لتحميل الصور امدلعانا 
+             $path = $file->store('/media','public');
+             $data['image_path'] = $path ;
             }
         // $category = new Category();
         // $category->name = $request->post('name');
@@ -104,7 +110,25 @@ class CategoriesController extends Controller
        if(!$data['slug']){
            $data['slug'] = Str::slug($data['name']);
        }
+
+       $old = false ;
+
+       if($request->hasFile('image')){
+        $file = $request->file('image'); // لانو اللارافيل عملالنا كلاس لتحميل الصور امدلعانا 
+       $path = $file->store('/media','public');
+       $data['image_path'] = $path ;
+
+
+       $old = $category->image_path ;
+     
+      }
+
+
         $category->update($data);
+
+        if($old){
+            Storage::disk('public')->delete($old);
+        }
 
         return redirect()->route('dashboard.categories.index')
         ->with('success', "Category ({$category->name}) Updated !")
@@ -114,8 +138,14 @@ class CategoriesController extends Controller
 
     public function destroy($id){
 
-        Category::destroy($id);
-        // $category = Category::findOrfail($id);
+       // Category::destroy($id);
+       $category = Category::findOrfail($id);
+       $category->delete();
+
+       if($category->image_path){
+        Storage::disk('public')->delete($category->image_path);
+       }
+
         return redirect()->route('dashboard.categories.index')
         ->with('success', "Category delete !")
         ->with('warning' , 'You Deleted A Category !');
@@ -130,9 +160,9 @@ class CategoriesController extends Controller
             'image' => [
                 'nullable',
                 'image',
-                'max:200' ,
+                'max:400' ,
                 // 'dimensions:min_width=300,min_height=300,max_width=800,max_height=300' ,
-                Rule::dimensions()->minWidth(300)->minHeight(300)->maxWidth(800)->maxHeight(300) ,
+                Rule::dimensions()->minWidth(300)->minHeight(300)->maxWidth(1400)->maxHeight(1400) ,
             ]
 
 
